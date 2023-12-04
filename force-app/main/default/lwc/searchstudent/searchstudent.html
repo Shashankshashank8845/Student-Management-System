@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Search Students">
+    <lightning-input type="text" label="Search by Name or Email" onchange={handleSearchChange}></lightning-input>
+    <lightning-button label="Search" onclick={searchStudents} variant="brand"></lightning-button>
+    <template if:true={searchedStudents}>
+    <lightning-datatable
+                    key-field="Id"
+                    data={searchedStudents}
+                    columns={columns}
+                    hide-checkbox-column="true">
+    </lightning-datatable>
+    <lightning-button label="Clear" onclick={clearSearch} variant="neutral"></lightning-button>
+    </template>
+    </lightning-card>
+    </template>
